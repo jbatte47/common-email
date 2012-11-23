@@ -1,7 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Email", "Common.Email\Common.Email.csproj", "{13946662-A9FB-4C6D-8766-04B94D404099}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Email", "Common.Email\Common.Email.csproj", "{421C499B-3242-48DE-BE64-050002E41241}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Email.Specifications", "..\spec\Common.Email.Specifications\Common.Email.Specifications.csproj", "{AF0B95DE-D857-4BFB-9D30-58B0E3D8EEBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +11,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{13946662-A9FB-4C6D-8766-04B94D404099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13946662-A9FB-4C6D-8766-04B94D404099}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13946662-A9FB-4C6D-8766-04B94D404099}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13946662-A9FB-4C6D-8766-04B94D404099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{421C499B-3242-48DE-BE64-050002E41241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{421C499B-3242-48DE-BE64-050002E41241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{421C499B-3242-48DE-BE64-050002E41241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{421C499B-3242-48DE-BE64-050002E41241}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF0B95DE-D857-4BFB-9D30-58B0E3D8EEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF0B95DE-D857-4BFB-9D30-58B0E3D8EEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF0B95DE-D857-4BFB-9D30-58B0E3D8EEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF0B95DE-D857-4BFB-9D30-58B0E3D8EEBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
