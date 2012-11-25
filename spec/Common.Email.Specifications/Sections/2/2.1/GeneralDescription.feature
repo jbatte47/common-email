@@ -10,9 +10,11 @@ Scenario Outline: Valid
 	Then no exception should be thrown during the validation call
 	And no calls should be made to the logger
 	Examples: 
-	| this                                         |
-	| the quick brown fox jumped over the lazy dog |
-	| !!!### THIS IS A MESSAGE ###!!!              |
+	| this                                                                                          |
+	| !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{}~ |
+	| ~}{zyxwvutsrqponmlkjihgfedcba`_^]\[ZYXWVUTSRQPONMLKJIHGFEDCBA@?>=<;:9876543210/.-,+*)('&%$#"! |
+# unfortunately we have to stop with these two examples because the full ASCII range includes
+# non-printable characters, which obviously aren't easy to represent in text-based specs
 
 @staticInput
 Scenario Outline: Error
@@ -20,7 +22,14 @@ Scenario Outline: Error
 	When I validate <this>
 	Then a format exception should be thrown during the validation call
 	Examples: 
-	| this        |
-	| 片仮名         |
-	| स्वतन्त्रता |
-	| ราชาศัพท์   |
+	| this              |
+	| Прывітанне свет   |
+	| 你好世界              |
+	| Xin chào thế giới |
+	| नमस्ते विश्व      |
+	| Hej Världen       |
+# this is "Hello World" in Belarussian, Chinese, Vietnamese, Hindi, and Swedish.
+# they all contain at least one non-ASCII character.
+# they also represent the first languages of developers who are actually associated with this project.
+# if you contribute and your first language is not English, and the phrase "Hello World" contains
+# non-ASCII characters when written in your language, add it to the list!
