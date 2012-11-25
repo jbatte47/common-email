@@ -7,6 +7,7 @@ Scenario Outline: Valid
 	Given I have an instance of the message validator
 	When I validate a line with <count> characters
 	Then no exception should be thrown during the validation call
+	And no calls should be made to the logger
 	Examples: 
 	| count |
 	| 1     |

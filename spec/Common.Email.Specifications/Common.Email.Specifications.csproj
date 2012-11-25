@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LineLengthLimits.feature</DependentUpon>
     </Compile>
+    <Compile Include="Sections\2\2.1\GeneralDescription.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GeneralDescription.feature</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -84,6 +89,10 @@
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>LineLengthLimits.feature.cs</LastGenOutput>
     </None>
+    <None Include="Sections\2\2.1\GeneralDescription.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>GeneralDescription.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common.Email\Common.Email.csproj">
@@ -91,6 +100,7 @@
       <Name>Common.Email</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CharacterRange.cs" />
     <Compile Include="IMessageValidator.cs" />
     <Compile Include="MessageValidationResources.Designer.cs">
       <AutoGen>True</AutoGen>
