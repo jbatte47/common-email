@@ -1,25 +1,22 @@
 ﻿using System;
-using System.Reactive.Linq;
-using System.Text;
 
 namespace Common.Email.Specifications.Fx
 {
     internal static class StringGenerator
     {
+        private static readonly Random _random = new Random();
+
         private const int _asciiLowerLimit = 33;
         private const int _asciiUpperLimit = 126;
 
         public static string RandomAscii(int length)
         {
-            var builder = new StringBuilder();
-            var stream = Observable.Create<char>(observer => new RandomCharacterGenerator(_asciiLowerLimit, _asciiUpperLimit, observer));
-
-            while (builder.Length < length)
+            var chars = new char[length];
+            for (int i = 0; i < length; i++)
             {
-                using (stream.Take(length - builder.Length).Subscribe(result => builder.Append(result))) { }
+                chars[i] = (char)_random.Next(_asciiLowerLimit, _asciiUpperLimit);
             }
-
-            return builder.ToString();
+            return new string(chars);
         }
     }
 }
