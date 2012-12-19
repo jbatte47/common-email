@@ -15,6 +15,7 @@ Scenario Outline: Valid
 
 Scenario Outline: Warning
 	Given I have an instance of the message validator
+	And I have a logger that sends warnings to Debug
 	When I validate a line with <count> characters
 	Then the logger assigned to the validator should receive a warning
 	And no exception should be thrown during the validation call

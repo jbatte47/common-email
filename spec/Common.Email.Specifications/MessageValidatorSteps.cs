@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using Common.Email.Specifications.Fx;
 using Common.Logging;
 using FluentAssertions;
@@ -21,6 +22,15 @@ namespace Common.Email.Specifications
             ScenarioContext.Current[Keys.MessageValidator] = new MessageValidator(_mockLogger.Object);
         }
 
+        [Given(@"I have a logger that sends warnings to Debug")]
+        public void GetDebugWarnLogger()
+        {
+            if (_mockLogger == null) _mockLogger = new Mock<ILog>();
+
+            _mockLogger.Setup(log => log.WarnFormat(It.IsAny<string>(), It.IsAny<object[]>()))
+                       .Callback<string, object[]>((format, args) => Debug.WriteLine("LOGGED AS WARNING: " + format, args));
+        }
+
         [When(@"I validate a line with (.*) characters")]
         public void ValidateRandomWithCount(int characterCount)
         {
@@ -34,7 +44,7 @@ namespace Common.Email.Specifications
             }
             catch (Exception error)
             {
-                Debug.WriteLine(error);
+                Debug.WriteLine("EXCEPTION: " + error);
                 ScenarioContext.Current[Keys.ExceptionDuringCall] = error;
             }
         }
@@ -51,7 +61,7 @@ namespace Common.Email.Specifications
             }
             catch (Exception error)
             {
-                Debug.WriteLine(error);
+                Debug.WriteLine("EXCEPTION: " + error);
                 ScenarioContext.Current[Keys.ExceptionDuringCall] = error;
             }
         }

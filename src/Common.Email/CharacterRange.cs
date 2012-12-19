@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Common.Email
 {
+    /// <summary>
+    /// Provides access to known character ranges that are used in various message validation scenarios.
+    /// </summary>
     public class CharacterRange
     {
         private const int _asciiMin = 1;
@@ -11,6 +14,7 @@ namespace Common.Email
         private const string _headerFieldNameName = "Header Field Name (http://tools.ietf.org/html/rfc5322#section-2.2)";
         private const int _printableAsciiMin = 33;
         private const int _printableAsciiMax = 126;
+        private const int _colon = 58;
         private static readonly Lazy<CharacterRange> _ascii = new Lazy<CharacterRange>(CreateAscii);
         private static readonly Lazy<CharacterRange> _headerFieldName = new Lazy<CharacterRange>(CreateHeaderFieldName);
 
@@ -53,7 +57,7 @@ namespace Common.Email
                 Name = _headerFieldNameName,
                 Min = _printableAsciiMin,
                 Max = _printableAsciiMax,
-                SpecialExclusions = new[] {58}
+                SpecialExclusions = new[] {_colon}
             };
         }
     }

@@ -118,18 +118,18 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MaxLineLengthExceededFormat" xml:space="preserve">
-    <value>Line length ({0}) exceeded maximum length ({1}) as specified by RFC 5322, Section 2.1.1. See http://tools.ietf.org/html/rfc5322#section-2.1.1 for more information.</value>
+    <value>Line length ({0}) exceeded maximum length ({1}) as specified by RFC 5322, Section 2.1.1.</value>
     <comment>Arg 0: actual line length; Arg 1: max line length</comment>
   </data>
   <data name="RecommendedLineLengthExceededFormat" xml:space="preserve">
-    <value>Line length ({0}) exceeded recommended maximum length ({1}) as specified by RFC 5322, Section 2.1.1. See http://tools.ietf.org/html/rfc5322#section-2.1.1 for more information.</value>
+    <value>Line length ({0}) exceeded recommended maximum length ({1}) as specified by RFC 5322, Section 2.1.1.</value>
     <comment>Arg 0: actual line length; Arg 1: max line length</comment>
   </data>
   <data name="InvalidCharacterDetailFormat" xml:space="preserve">
     <value>the '{0}' character, found at column {1}</value>
   </data>
   <data name="InvalidStringHelperSummaryFormat" xml:space="preserve">
-    <value>One or more characters did not fall within the {0} character range. Details: {1}. See http://tools.ietf.org/html/rfc5322#section-2.1 for more information.</value>
+    <value>One or more characters did not fall within the {0} character range as specified by RFC 5322, Section 2.1. Details: {1}.</value>
   </data>
   <data name="HelperSummarySeparator" xml:space="preserve">
     <value>; </value>

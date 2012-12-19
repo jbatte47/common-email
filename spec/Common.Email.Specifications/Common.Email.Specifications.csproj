@@ -68,7 +68,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fx\RandomCharacterGenerator.cs" />
     <Compile Include="Fx\StringGenerator.cs" />
     <Compile Include="Keys.cs" />
     <Compile Include="MessageValidatorSteps.cs" />

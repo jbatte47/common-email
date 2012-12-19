@@ -12,7 +12,6 @@ namespace Common.Email
     {
         private const int _suggestedLineMax = 78;
         private const int _requiredLineMax = 998;
-        private readonly CharacterRange _generalRange = CharacterRange.Ascii;
         private readonly ILog _log;
 
         public MessageValidator(ILog log)
@@ -36,17 +35,24 @@ namespace Common.Email
             if (length > _suggestedLineMax) _log.WarnFormat(MessageValidationResources.RecommendedLineLengthExceededFormat, length, _suggestedLineMax);
         }
 
+        /// <summary>
+        /// Validates the input string according to the rules specified in RFC 5322; specifically
+        /// section 2.1 (http://tools.ietf.org/html/rfc5322#section-2.1).
+        /// </summary>
+        /// <param name="input">The input string.</param>
         public void ValidateString(string input)
         {
+            var range = CharacterRange.Ascii;
+
             var errors = input.Select((character, index) => new { Character = character, Index = index })
-                .Where(item => !IsCharacterValid(item.Character, _generalRange))
+                .Where(item => !IsCharacterValid(item.Character, range))
                 .Select(item => string.Format(MessageValidationResources.InvalidCharacterDetailFormat, item.Character, item.Index))
                 .ToArray();
 
             if (errors.Length == 0) return;
 
             var helperBody = string.Join(MessageValidationResources.HelperSummarySeparator, errors);
-            var helperSummary = string.Format(MessageValidationResources.InvalidStringHelperSummaryFormat, _generalRange.Name, helperBody);
+            var helperSummary = string.Format(MessageValidationResources.InvalidStringHelperSummaryFormat, range.Name, helperBody);
             throw new FormatException(helperSummary);
         }
 
