@@ -78,9 +78,6 @@ publish
 # Publish Web Output
 *.Publish.xml
 
-# NuGet executable
-src/.nuget
-
 # NuGet Packages Directory
 packages
 
